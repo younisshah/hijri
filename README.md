@@ -20,7 +20,8 @@ go get github.com/younisshah/hijri
 
 ```go
 gregorianDate, err := hijri.HijriToGregorian(1439, 3, 12)
-// ...
+// ... err handling
+// gregorianDate.String() -> 2017-11-30 00:00:00 +0000 UTC
 ```
 
 # License
