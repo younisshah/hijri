@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-const layout = "2006-01-02"
+//const layout = "2006-01-02"
 
 // HijriToGregorian takes a Hijri year, month and day and returns the corresponding Gregorian date.
 // It returns a string representing the Gregorian date.
