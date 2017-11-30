@@ -11,7 +11,9 @@ something which can obviously vary and is unsuited to computer calculation.
 
 # Install
 
-`go get github.com/younisshah/hijri`
+```go 
+go get github.com/younisshah/hijri
+```
 
 
 # Usage
