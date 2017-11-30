@@ -19,8 +19,8 @@ go get github.com/younisshah/hijri
 # Usage
 
 ```go
-    gregorianDate, err := hijri.HijriToGregorian(1439, 3, 12)
-    // ...
+gregorianDate, err := hijri.HijriToGregorian(1439, 3, 12)
+// ...
 ```
 
 # License
