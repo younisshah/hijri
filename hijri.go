@@ -3,14 +3,13 @@ package hijri
 import (
 	"math"
 	"strconv"
-	"time"
 )
 
 const layout = "2006-01-02"
 
 // HijriToGregorian takes a Hijri year, month and day and returns the corresponding Gregorian date.
-// It returns a time.Time struct representing the Gregorian date and/or an error.
-func HijriToGregorian(year, month, day int) (time.Time, error) {
+// It returns a string representing the Gregorian date.
+func HijriToGregorian(year, month, day int) string {
 	iy := year
 	im := month
 	id := day
@@ -25,7 +24,7 @@ func HijriToGregorian(year, month, day int) (time.Time, error) {
 // julianToGregorian takes a julian date and returns a Gregorian equivalent!
 // Ended up manually translating JS to go
 // Inspired from http://keith-wood.name/calendars.html
-func julianToGregorian(julianDate int) (time.Time, error) {
+func julianToGregorian(julianDate int) string {
 	z := math.Floor(float64(julianDate) + 0.5)
 	a := math.Floor((z - 1867216.25) / 36524.25)
 	a = z + 1 + a - math.Floor(a/4)
@@ -48,11 +47,7 @@ func julianToGregorian(julianDate int) (time.Time, error) {
 	if year <= 0 {
 		year--
 	}
-	gTime, err := time.Parse(layout, ftos(year)+"-"+ftos(month)+"-"+ftos(day))
-	if err != nil {
-		return time.Time{}, err
-	}
-	return gTime, err
+	return ftos(year) + "-" + ftos(month) + "-" + ftos(day)
 }
 
 // ftos is a helper function to convert a float64 to string
